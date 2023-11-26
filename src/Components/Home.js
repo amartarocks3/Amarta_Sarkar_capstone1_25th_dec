@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import '../Style/Home.css';
 import { useDispatch } from 'react-redux';
-import addToMyCart from "../Redux/addToCart";
+import {addToMyCart} from "../Redux/addToCart";
 let Home = () => {
   const [products, setProducts] = useState();
   const [isLoading, setIsLoading] = useState(true);
