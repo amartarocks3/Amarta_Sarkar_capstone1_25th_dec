@@ -1,0 +1,29 @@
+.Product_list {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+.Product_list .card {
+  border: none;
+  width: 24%;
+  margin-top: 10px;
+  box-shadow: 1px 5px 10px rgb(218, 216, 216);
+}
+.Product_list .card .card-img {
+  padding: 20px;
+  width: 100%;
+  height: 300px;
+}
+.Product_list .card .card-body .card-title {
+  height: 50px;
+  overflow: hidden;
+}
+.Product_list .card .card-body .card-text {
+  text-align: center;
+  color: orangered;
+  font-weight: 600;
+}/*# sourceMappingURL=Fav.css.map */

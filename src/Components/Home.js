@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import '../Style/Home.css';
 import { useDispatch } from 'react-redux';
 import {addToMyCart} from "../Redux/addToCart";
+import {addToMyfav} from "../Redux/addToFav";
 let Home = () => {
   const [products, setProducts] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -28,10 +29,21 @@ let Home = () => {
       image : popUpData.image,
       title : popUpData.title,
       description : popUpData.des,
-      price : popUpData.price
+      price : popUpData.price,
+      quantity : totalProduct
     }
     dispatch(addToMyCart(cartdata));
-    // console.log(cartdata);
+  }
+  function addToFav() {
+    let cartdata = { 
+      id : popUpData.id,
+      image : popUpData.image,
+      title : popUpData.title,
+      description : popUpData.des,
+      price : popUpData.price,
+      quantity : totalProduct
+    }
+    dispatch(addToMyfav(cartdata));
   }
   return isLoading ? (
     <div>
@@ -80,10 +92,15 @@ let Home = () => {
              <h3>{popUpData.title}</h3>
              <p>{popUpData.des}</p>
              <h4>$ {popUpData.price} USD</h4>
-             <input type="text" placeholder="1" onKeyDown={(e)=>{
-              setTotalProduct(e.target.value)
+             <input type="text" placeholder="1" onChange={(e)=>{
+              setTotalProduct(e.target.value);
              }}/>
-             <button onClick={()=> {
+             <button className="star_btn"><i class="bi bi-star-fill"
+             onClick={()=>{
+              addToFav();
+             }}
+             ></i></button>
+             <button className="add_cart_btn" onClick={()=> {
               addToCart();
              }}><i className="bi bi-bag-dash"></i> Add to Cart</button>
              </div>

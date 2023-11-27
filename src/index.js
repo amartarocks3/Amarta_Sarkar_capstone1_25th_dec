@@ -8,6 +8,8 @@ import store from "./store";
 import Nav from "./Components/Navigation";
 import Home from "./Components/Home";
 import Cart from './Components/Cart';
+import Order from './Components/Order_page';
+import Fav from './Components/Fav';
 let MainComponent= () => {
   return (
       <div>
@@ -30,6 +32,14 @@ const mainRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart/>
+      },
+      {
+        path: "/fav",
+        element: <Fav/>
+      },
+      {
+        path: "/order",
+        element: <Order/>
       }
     ]
   }

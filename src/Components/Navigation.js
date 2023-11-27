@@ -25,13 +25,13 @@ let Nav = () => {
             <Link className="nav-link" to={'/'}>Home</Link>
             </li>
             <li className="nav-item or_link">
-          <a className="nav-link" href="#">Favorites</a>
+            <Link className="nav-link" to={'/fav'}>Favorite</Link>
         </li>
         <li className="nav-item or_link">
           <Link className="nav-link" to={'/cart'}>Cart</Link>
         </li>
         <li className="nav-item or_link">
-          <a className="nav-link" href="#">Contacts</a>
+        <Link className="nav-link" to={'/order'}>Order</Link>
         </li>
             
           </ul>
